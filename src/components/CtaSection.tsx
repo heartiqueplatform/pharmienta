@@ -59,7 +59,7 @@ export const CtaSection: React.FC<CtaSectionProps> = ({ onOpenTrial, isDarkMode 
                       id="input-cta-quick-email"
                       type="text"
                       required
-                      placeholder="Enter phone or email (e.g. 0704473503)"
+                      placeholder="Enter phone or email (e.g. 0717517371)"
                       value={quickEmail}
                       onChange={(e) => setQuickEmail(e.target.value)}
                       className={`w-full pl-10 pr-3 py-3 bg-transparent text-sm focus:outline-none ${isDarkMode ? 'text-white placeholder-slate-500' : 'text-slate-900 placeholder-slate-400'

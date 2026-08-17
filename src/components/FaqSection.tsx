@@ -147,13 +147,13 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ isDarkMode = false }) =>
             </p>
           </div>
           <a
-            href="https://wa.me/254704473503?text=Hello%20Pharmienta%20Team%2C%20I%20have%20a%20question%20about%20the%20pharmacy%20software"
+            href="https://wa.me/254717517371?text=Hello%20Pharmienta%20Team%2C%20I%20have%20a%20question%20about%20the%20pharmacy%20software"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2ea043] hover:bg-[#2c973f] text-white font-bold text-xs shadow-md transition-all shrink-0"
           >
             <PhoneCall className="w-3.5 h-3.5" />
-            <span>Chat on WhatsApp (0704473503)</span>
+            <span>Chat on WhatsApp (0717517371)</span>
           </a>
         </div>
       </div>

@@ -221,7 +221,7 @@ export const AboutPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
               <Phone className="w-5 h-5 text-[#2ea043] shrink-0 mt-0.5" />
               <div>
                 <p className="font-bold">Direct Phone & WhatsApp</p>
-                <a href="tel:0704473503" className="text-xs text-[#003366] dark:text-blue-400 font-bold block mt-1 hover:underline">
+                <a href="tel:0717517371" className="text-xs text-[#003366] dark:text-blue-400 font-bold block mt-1 hover:underline">
                   0704 473 503
                 </a>
               </div>

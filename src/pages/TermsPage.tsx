@@ -159,7 +159,7 @@ export const TermsPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
             </p>
             <div className={`p-4 rounded-2xl space-y-1 ${isDarkMode ? 'bg-[#0d1117]' : 'bg-slate-50'}`}>
               <p><strong>Pharmienta Customer Success Desk</strong></p>
-              <p>WhatsApp / Call: <a href="tel:0704473503" className="text-[#003366] dark:text-blue-400 font-bold hover:underline">0704 473 503</a></p>
+              <p>WhatsApp / Call: <a href="tel:0717517371" className="text-[#003366] dark:text-blue-400 font-bold hover:underline">0704 473 503</a></p>
               <p>Email: <a href="mailto:pharmienta@gmail.com" className="text-[#003366] dark:text-blue-400 font-bold hover:underline">pharmienta@gmail.com</a></p>
               <p>Support Hours: Monday to Saturday, 7:00 AM – 10:00 PM EAT</p>
             </div>

@@ -131,7 +131,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                <a href="tel:0704473503" className="hover:text-white font-bold transition-colors">0704 473 503 (Call & WhatsApp)</a>
+                <a href="tel:0717517371" className="hover:text-white font-bold transition-colors">0717 517 371(Call & WhatsApp)</a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-rose-400 shrink-0" />
