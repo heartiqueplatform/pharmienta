@@ -1,12 +1,5 @@
 {
-    "framework": "vite",
-    "buildCommand": "npm run build",
+    "buildCommand": "node build.mjs",
     "installCommand": "npm install",
-    "outputDirectory": "dist",
-    "rewrites": [
-        {
-            "source": "/(.*)",
-            "destination": "/index.html"
-        }
-    ]
+    "outputDirectory": "dist"
 }
