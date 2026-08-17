@@ -38,14 +38,16 @@ export const TermsPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
               />
             </div>
             <div className="flex flex-col text-left">
-              <div className="flex items-center gap-1 font-extrabold text-lg font-heading leading-tight">
-                <span className="text-[#003366] dark:text-blue-400">PHARM</span>
-                <span className="text-[#B30000] dark:text-red-400">IENTA</span>
-                <span className="text-[10px] uppercase font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300">
+              <div className="flex items-center gap-0 font-bold text-lg leading-tight" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
+                <span className="text-[#003366] dark:text-blue-400 tracking-tight">PHARM</span>
+                <span className="text-[#B30000] dark:text-red-400 tracking-tight">IENTA</span>
+                <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 ml-1.5">
                   PRO
                 </span>
               </div>
-              <span className="text-[9px] text-slate-400 uppercase tracking-widest font-semibold">Oriented To Care</span>
+              <span className="text-[9px] text-slate-400 uppercase tracking-wider font-semibold" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
+                Oriented To Care
+              </span>
             </div>
           </button>
 

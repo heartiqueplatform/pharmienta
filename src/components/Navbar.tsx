@@ -92,15 +92,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial, onOpenDemo, onNavig
               />
             </div>
             <div className="flex flex-col">
-              <div className="flex items-center gap-1.5 font-extrabold tracking-tight text-xl font-heading">
-                <span className="text-[#003366] group-hover:text-blue-600 transition-colors">PHARM</span>
-                <span className="text-[#B30000] group-hover:text-red-600 transition-colors">IENTA</span>
-                <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-[#2ea043]/20 dark:text-[#2ea043]">
+              <div className="flex items-center gap-0 font-bold text-xl" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
+                <span className="text-[#003366] group-hover:text-blue-600 transition-colors tracking-tight">PHARM</span>
+                <span className="text-[#B30000] group-hover:text-red-600 transition-colors tracking-tight">IENTA</span>
+                <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-[#2ea043]/20 dark:text-[#2ea043] ml-1.5">
                   PRO
                 </span>
               </div>
-              <span className={`text-[10px] tracking-wider uppercase font-semibold ${isDarkMode ? 'text-slate-400' : 'text-slate-500'
-                }`}>
+              <span className={`text-[10px] tracking-wider uppercase font-semibold ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`} style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
                 Oriented To Care • Kenya
               </span>
             </div>

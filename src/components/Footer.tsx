@@ -1,12 +1,12 @@
 import React from 'react';
-import { 
-  Activity, 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Globe, 
-  ShieldCheck, 
-  Moon, 
+import {
+  Activity,
+  Mail,
+  Phone,
+  MapPin,
+  Globe,
+  ShieldCheck,
+  Moon,
   Sun
 } from 'lucide-react';
 
@@ -18,51 +18,54 @@ interface FooterProps {
 
 export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDarkMode, onNavigate }) => {
   return (
-    <footer id="footer" className={`text-xs sm:text-sm transition-colors duration-200 ${
-      isDarkMode ? 'bg-[#090d12] text-slate-400' : 'bg-slate-900 text-slate-300'
-    }`}>
+    <footer id="footer" className={`text-xs sm:text-sm transition-colors duration-200 ${isDarkMode ? 'bg-[#090d12] text-slate-400' : 'bg-slate-900 text-slate-300'
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 mb-12">
           {/* Col 1: Brand Info */}
           <div className="lg:col-span-2 space-y-4">
-            <button 
+            <button
               onClick={() => onNavigate ? onNavigate('home') : window.location.hash = ''}
               className="flex items-center gap-3 cursor-pointer text-left"
             >
-              <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#003366] to-[#B30000] p-0.5 flex items-center justify-center shadow-lg">
-                <div className="w-full h-full bg-[#0d1117] rounded-[10px] flex items-center justify-center">
-                  <Activity className="w-4 h-4 text-[#2ea043]" />
-                </div>
+              {/* PWA Icon - Perfect Circle */}
+              <div className="w-9 h-9 rounded-full overflow-hidden shadow-md shadow-[#003366]/20 ring-2 ring-[#003366]/10 flex-shrink-0">
+                <img
+                  src="/pwa-192x192.png"
+                  alt="Pharmienta Pro"
+                  className="w-full h-full object-cover"
+                />
               </div>
+
+              {/* Brand Name - Connected with no spacing */}
               <div className="flex flex-col">
-                <div className="flex items-center gap-1 font-extrabold tracking-tight text-lg font-heading">
-                  <span className="text-[#3b82f6]">PHARM</span>
-                  <span className="text-[#ef4444]">IENTA</span>
-                  <span className="text-[9px] uppercase font-bold px-1.5 py-0.2 rounded bg-[#2ea043]/20 text-[#2ea043]">
+                <div className="flex items-center gap-0 font-bold text-lg" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
+                  <span className="text-[#3b82f6] tracking-tight">PHARM</span>
+                  <span className="text-[#ef4444] tracking-tight">IENTA</span>
+                  <span className="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded bg-[#2ea043]/20 text-[#2ea043] ml-1.5">
                     PRO
                   </span>
                 </div>
-                <span className="text-[10px] text-slate-400 uppercase tracking-widest font-bold">
+                <span className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
                   Oriented To Care • Kenya
                 </span>
               </div>
             </button>
 
-            <p className="text-slate-400 text-xs leading-relaxed max-w-sm">
+            <p className="text-slate-400 text-xs leading-relaxed max-w-sm" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
               The modern pharmacy management platform engineered to empower Kenyan community chemists with live stock math, customer request tracking, staff audit accountability, and real-time owner mobile dashboards.
             </p>
 
             <div className="flex items-center gap-2 pt-2 text-xs text-[#2ea043] font-medium">
               <ShieldCheck className="w-4 h-4" />
-              <button 
-                onClick={() => onNavigate ? onNavigate('privacy') : window.location.hash = '#privacy'} 
+              <button
+                onClick={() => onNavigate ? onNavigate('privacy') : window.location.hash = '#privacy'}
                 className="hover:underline cursor-pointer"
               >
                 Compliant with Kenya Data Protection Act 2019
               </button>
             </div>
           </div>
-
           {/* Col 2: Platform Links */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white font-heading">
@@ -85,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
               <li>
-                <button 
+                <button
                   onClick={() => onNavigate ? onNavigate('about') : window.location.hash = '#about'}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
@@ -93,7 +96,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => onNavigate ? onNavigate('privacy') : window.location.hash = '#privacy'}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
@@ -101,7 +104,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
                 </button>
               </li>
               <li>
-                <button 
+                <button
                   onClick={() => onNavigate ? onNavigate('terms') : window.location.hash = '#terms'}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
