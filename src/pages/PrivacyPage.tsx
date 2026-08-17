@@ -117,7 +117,7 @@ export const PrivacyPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = 
               When you register for a 12-Month Pioneer License or use the Pharmienta Pro application, we process the following categories of information:
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-slate-400">
-              <li><strong>Pharmacy Account Data:</strong> Business name, branch locations, owner name, official phone number (e.g. 0704473503), email address, and Kenya Pharmacy & Poisons Board (PPB) premises registration number where applicable.</li>
+              <li><strong>Pharmacy Account Data:</strong> Business name, branch locations, owner name, official phone number (e.g. 0717517371), email address, and Kenya Pharmacy & Poisons Board (PPB) premises registration number where applicable.</li>
               <li><strong>Inventory & Transaction Records:</strong> Medicine catalog, batch numbers, expiry dates, supplier cost prices, retail prices, sales receipts, shift handover records, and customer request book logs.</li>
               <li><strong>M-Pesa Reconciliation Data:</strong> Transaction reference codes and confirmation amounts collected through Safaricom Till or Paybill numbers to ensure zero-discrepancy shift audits.</li>
               <li><strong>System Logs & Diagnostics:</strong> Browser type, IP addresses, timestamped login events, and audit logs to track staff operations and prevent internal shrinkage.</li>
@@ -169,7 +169,7 @@ export const PrivacyPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = 
             <div className={`p-4 rounded-2xl space-y-1 ${isDarkMode ? 'bg-[#0d1117]' : 'bg-slate-50'}`}>
               <p><strong>Pharmienta Kenya Data Office</strong></p>
               <p>Email: <a href="mailto:pharmienta@gmail.com" className="text-[#003366] dark:text-blue-400 font-bold hover:underline">pharmienta@gmail.com</a></p>
-              <p>Phone / WhatsApp: <a href="tel:0704473503" className="text-[#003366] dark:text-blue-400 font-bold hover:underline">0704 473 503</a></p>
+              <p>Phone / WhatsApp: <a href="tel:0717517371" className="text-[#003366] dark:text-blue-400 font-bold hover:underline">0717 517 371</a></p>
               <p>Address: Westlands Commercial Center, Nairobi, Kenya</p>
             </div>
           </div>
