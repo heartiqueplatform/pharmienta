@@ -20,17 +20,18 @@ interface ProblemSectionProps {
 
 export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOpenTrial, isDarkMode = false }) => {
   const getIcon = (iconName: string) => {
+    const iconClass = "w-6 h-6 text-[#003366] dark:text-blue-400";
     switch (iconName) {
       case 'PackageX':
-        return <PackageX className="w-6 h-6 text-red-500" />;
+        return <PackageX className={iconClass} />;
       case 'ClipboardList':
-        return <ClipboardList className="w-6 h-6 text-red-500" />;
+        return <ClipboardList className={iconClass} />;
       case 'ShieldAlert':
-        return <ShieldAlert className="w-6 h-6 text-red-500" />;
+        return <ShieldAlert className={iconClass} />;
       case 'EyeOff':
-        return <EyeOff className="w-6 h-6 text-red-500" />;
+        return <EyeOff className={iconClass} />;
       default:
-        return <AlertTriangle className="w-6 h-6 text-red-500" />;
+        return <AlertTriangle className={iconClass} />;
     }
   };
 
@@ -38,8 +39,23 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOpenTrial, isD
     <section id="problem" className={`py-20 md:py-28 transition-colors duration-200 ${isDarkMode ? 'bg-[#0d1117]' : 'bg-slate-100/70'
       }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        {/* Section Header with Logo Watermark */}
+        <div className="text-center max-w-3xl mx-auto mb-16 relative">
+          {/* Logo as subtle background watermark */}
+          <div
+            className="absolute inset-0 -z-10 opacity-[0.03] dark:opacity-[0.04]"
+            style={{
+              backgroundImage: `url('/Pharmientapro-min.png')`,
+              backgroundSize: 'contain',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#003366]/10 dark:bg-[#003366]/20 text-[#003366] dark:text-blue-400 text-xs font-bold mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#003366] dark:bg-blue-400 animate-pulse" />
+            Why Kenyan Chemists Are Switching
+          </div>
 
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight mb-5 ${isDarkMode ? 'text-white' : 'text-slate-900'
             }`}>
@@ -65,7 +81,8 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOpenTrial, isD
                 }`}
             >
               <div className="flex items-start gap-4">
-                <div className="w-12 h-12 rounded-2xl bg-red-100 dark:bg-red-950/60 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
+                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform ${isDarkMode ? 'bg-[#003366]/20' : 'bg-[#003366]/10'
+                  }`}>
                   {getIcon(item.iconName)}
                 </div>
 
@@ -103,22 +120,33 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOpenTrial, isD
         <div className="relative rounded-3xl overflow-hidden shadow-xl bg-gradient-to-r from-[#003366] via-[#004080] to-[#B30000] p-1">
           <div className={`rounded-[23px] p-8 sm:p-10 lg:p-12 text-center max-w-4xl mx-auto backdrop-blur-xl ${isDarkMode ? 'bg-[#0d1117]/95' : 'bg-white/95'
             }`}>
-            <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 text-xs font-bold mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" />
-              <span>The Transformation</span>
-            </div>
+            {/* Logo watermark inside banner - More visible */}
+            <div
+              className="absolute inset-0 opacity-[0.08] dark:opacity-[0.10]"
+              style={{
+                backgroundImage: `url('/Pharmientapro-min.png')`,
+                backgroundSize: 'contain',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat',
+              }}
+            />
 
-            <h3 className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading mb-4 ${isDarkMode ? 'text-white' : 'text-slate-900'
+            {/* Subtle gradient overlay to blend logo */}
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/30 dark:to-[#0d1117]/30 rounded-[23px]" />
+
+
+
+            <h3 className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading mb-4 relative ${isDarkMode ? 'text-white' : 'text-slate-900'
               }`}>
               That's Why We Built <span className="text-[#003366] dark:text-blue-400">Pharm</span><span className="text-[#B30000] dark:text-red-500">ienta</span> Pro
             </h3>
 
-            <p className={`text-base sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'
+            <p className={`text-base sm:text-lg mb-8 max-w-2xl mx-auto leading-relaxed relative ${isDarkMode ? 'text-slate-300' : 'text-slate-600'
               }`}>
               We replaced complicated generic spreadsheets and messy books with a modern, cloud-backed pharmacy system that calculates stock instantly, secures shift audits, and lets owners track sales anywhere in real time.
             </p>
 
-            <div className="flex flex-wrap items-center justify-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-4 relative">
               <button
                 id="btn-problem-try-pharmienta"
                 onClick={onOpenTrial}
@@ -134,4 +162,3 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOpenTrial, isD
     </section>
   );
 };
-

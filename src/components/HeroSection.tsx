@@ -40,37 +40,25 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTrial, onOpenDem
           }`} />
       </div>
 
-      {/* Floating Animated Medical Badges (Desktop) */}
-      <div className="hidden xl:block absolute top-28 left-8 animate-float pointer-events-none z-10">
-        <div className={`flex items-center gap-3 px-4 py-3 rounded-2xl shadow-lg backdrop-blur-md ${isDarkMode ? 'bg-[#161b22]/90 text-[#c9d1d9]' : 'bg-white/95 text-slate-800'
-          }`}>
-          <div className="w-9 h-9 rounded-xl bg-blue-100 text-[#003366] dark:bg-blue-900/40 dark:text-blue-300 flex items-center justify-center">
-            <PackageCheck className="w-5 h-5" />
-          </div>
-          <div>
-            <p className="text-xs font-bold">Auto-Stock Calculation</p>
-            <p className={`text-[10px] ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Every sale deducted in real time</p>
-          </div>
-        </div>
-      </div>
 
-      <div className="hidden xl:block absolute top-40 right-8 animate-float-delayed pointer-events-none z-10">
-        <div className={`flex items-center gap-3 px-4 py-3 rounded-2xl shadow-lg backdrop-blur-md ${isDarkMode ? 'bg-[#161b22]/90 text-[#c9d1d9]' : 'bg-white/95 text-slate-800'
-          }`}>
-          <div className="w-9 h-9 rounded-xl bg-emerald-100 text-[#2ea043] dark:bg-emerald-900/40 dark:text-emerald-300 flex items-center justify-center">
-            <TrendingUp className="w-5 h-5" />
-          </div>
-          <div>
-            <p className="text-xs font-bold">Live Owner Dashboard</p>
-            <p className={`text-[10px] ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>Check sales remotely on phone</p>
-          </div>
-        </div>
-      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-20">
 
         {/* Hero Main Headline - Clean Typography, No Cheesy Gradients */}
-        <div className="text-center max-w-4xl mx-auto mb-8">
+        <div className="text-center max-w-4xl mx-auto mb-8 relative">
+          {/* Gradient accent bar with image blend */}
+          <div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-[#003366]/5 via-transparent to-[#B30000]/5 dark:from-[#003366]/10 dark:via-transparent dark:to-[#B30000]/10" />
+
+          <div
+            className="absolute inset-0 -z-10 rounded-2xl opacity-[0.03] dark:opacity-[0.04]"
+            style={{
+              backgroundImage: `url('/Pharmientapro-min.png')`,
+              backgroundSize: 'contain',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+            }}
+          />
+
           <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-heading leading-[1.15] mb-6 ${isDarkMode ? 'text-white' : 'text-slate-900'
             }`}>
             Take Complete Control of Your Pharmacy with{' '}
@@ -172,27 +160,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTrial, onOpenDem
                 className="w-full h-auto object-cover max-h-[560px]"
                 referrerPolicy="no-referrer"
               />
-
-              {/* Overlay Float Element on the Mockup */}
-              <div className={`absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-auto rounded-2xl p-3.5 sm:p-4 shadow-xl backdrop-blur-md max-w-md ${isDarkMode ? 'bg-[#0d1117]/95 text-white' : 'bg-white/95 text-slate-900'
-                }`}>
-                <div className="flex items-start gap-3">
-                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-100 text-[#2ea043] dark:bg-emerald-900/40 dark:text-emerald-300 flex items-center justify-center shrink-0">
-                    <Activity className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="flex items-center justify-between gap-4">
-                      <p className="text-xs font-bold">Counter Sale Auto-Deducted</p>
-                      <span className="text-[10px] text-emerald-800 bg-emerald-100 dark:text-emerald-300 dark:bg-emerald-950/60 px-2 py-0.5 rounded-full font-mono font-bold">
-                        KES 3,450.00
-                      </span>
-                    </div>
-                    <p className={`text-[11px] mt-1 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-                      Amoxiclav 625mg • Deducted from Batch #KE904 (18 left) • M-Pesa Till verified
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>
