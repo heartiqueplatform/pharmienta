@@ -1,0 +1,6 @@
+{
+  "name": "Pharmienta Pro",
+  "description": "The modern, cloud-backed pharmacy management system for Kenyan chemists: real-time stock calculation, customer request book, smooth refund return flow, staff sales audits, and remote owner live dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
