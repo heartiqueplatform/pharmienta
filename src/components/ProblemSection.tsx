@@ -52,11 +52,6 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOpenTrial, isD
             }}
           />
 
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#003366]/10 dark:bg-[#003366]/20 text-[#003366] dark:text-blue-400 text-xs font-bold mb-4">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#003366] dark:bg-blue-400 animate-pulse" />
-            Why Kenyan Chemists Are Switching
-          </div>
-
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight mb-5 ${isDarkMode ? 'text-white' : 'text-slate-900'
             }`}>
             Running a Pharmacy Without Live System Control is{' '}
@@ -70,7 +65,7 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOpenTrial, isD
           </p>
         </div>
 
-        {/* 4 Pain Points Grid - NO BORDERS */}
+        {/* 4 Pain Points Grid - Stacked for mobile */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
           {PAIN_POINTS.map((item, index) => (
             <div
@@ -80,19 +75,21 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOpenTrial, isD
                 : 'bg-white text-slate-800'
                 }`}
             >
-              <div className="flex items-start gap-4">
-                <div className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform ${isDarkMode ? 'bg-[#003366]/20' : 'bg-[#003366]/10'
-                  }`}>
+              {/* Stacked layout: Icon on top for mobile, side by side on desktop */}
+              <div className="flex flex-col md:flex-row md:items-start gap-4">
+                {/* Icon - No background, just the icon */}
+                <div className="w-full md:w-12 h-12 flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform">
                   {getIcon(item.iconName)}
                 </div>
 
-                <div className="space-y-3 flex-1">
+                {/* Text - Full width on mobile */}
+                <div className="space-y-3 flex-1 w-full">
                   <div className="flex items-center justify-between">
                     <h3 className={`text-lg sm:text-xl font-bold font-heading ${isDarkMode ? 'text-white' : 'text-slate-900'
                       }`}>
                       {item.title}
                     </h3>
-                    <span className="text-xs font-mono font-bold text-slate-400">0{index + 1}</span>
+                    <span className="text-xs font-mono font-bold text-slate-400 shrink-0 ml-2">0{index + 1}</span>
                   </div>
 
                   <p className={`text-sm leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'
@@ -133,8 +130,6 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOpenTrial, isD
 
             {/* Subtle gradient overlay to blend logo */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-white/30 dark:to-[#0d1117]/30 rounded-[23px]" />
-
-
 
             <h3 className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold font-heading mb-4 relative ${isDarkMode ? 'text-white' : 'text-slate-900'
               }`}>
