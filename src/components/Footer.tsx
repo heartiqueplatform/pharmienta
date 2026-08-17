@@ -39,11 +39,14 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
 
               {/* Brand Name - Connected with no spacing */}
               <div className="flex flex-col">
-                <div className="flex items-center gap-0 font-bold text-lg" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
-                  <span className="text-[#3b82f6] tracking-tight">PHARM</span>
-                  <span className="text-[#ef4444] tracking-tight">IENTA</span>
-                  <span className="text-[9px] uppercase font-bold tracking-wider px-1.5 py-0.2 rounded bg-[#2ea043]/20 text-[#2ea043] ml-1.5">
-                    PRO
+                <div className="flex items-center gap-0 font-bold text-xl" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
+                  <span className="text-[#003366] group-hover:text-blue-600 transition-colors tracking-tight">Pharm</span>
+                  <span className="text-[#B30000] group-hover:text-red-600 transition-colors tracking-tight">ienta</span>
+                  <span className="inline-flex items-center justify-center ml-1">
+                    <svg className="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                      <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" fill="none" />
+                    </svg>
                   </span>
                 </div>
                 <span className="text-[10px] text-slate-400 uppercase tracking-wider font-semibold" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>

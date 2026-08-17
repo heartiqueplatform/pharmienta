@@ -47,22 +47,21 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial, onOpenDemo, onNavig
   return (
     <>
       {/* Top Notification Announcement Bar */}
-      <div id="announcement-bar" className="bg-gradient-to-r from-[#003366] via-[#004080] to-[#B30000] text-xs md:text-sm py-2 px-4 text-center text-white font-medium flex items-center justify-center gap-2 shadow-sm">
-        <span className="inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-[#2ea043] text-white shadow-xs">
-          <Gift className="w-3 h-3 mr-1 inline" /> 12 Months Free
-        </span>
-        <span>
-          <strong>Pioneer Kenyan Launch:</strong> First 50 pharmacies get 12 Months 100% Free! Only 14 slots remaining.
-        </span>
+      <div id="announcement-bar" className="bg-gradient-to-r from-[#003366] via-[#004080] to-[#B30000] text-xs md:text-sm py-2.5 px-4 text-center text-white font-medium flex flex-col sm:flex-row items-center justify-center gap-2 shadow-sm border-b border-white/10">
+        <div className="flex items-center gap-2 flex-wrap justify-center">
+
+          <span className="text-white/95">
+            <strong className="text-white">Pioneer Kenyan Launch:</strong> First 50 pharmacies get <strong className="text-white">12 Months 100% Free</strong>! Only <span className="text-yellow-300 font-bold">14</span> slots remaining.
+          </span>
+        </div>
         <button
           id="btn-claim-pioneer-top"
           onClick={onOpenTrial}
-          className="hidden sm:inline-flex items-center underline hover:text-yellow-200 ml-2 text-xs font-bold cursor-pointer transition-colors"
+          className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 hover:border-white/40 transition-all text-xs font-bold cursor-pointer whitespace-nowrap"
         >
-          Claim Slot &rarr;
+          Claim Slot
         </button>
       </div>
-
       {/* Main Navigation Bar */}
       <header
         id="main-navbar"
@@ -93,10 +92,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial, onOpenDemo, onNavig
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-0 font-bold text-xl" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
-                <span className="text-[#003366] group-hover:text-blue-600 transition-colors tracking-tight">PHARM</span>
-                <span className="text-[#B30000] group-hover:text-red-600 transition-colors tracking-tight">IENTA</span>
-                <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-[#2ea043]/20 dark:text-[#2ea043] ml-1.5">
-                  PRO
+                <span className="text-[#003366] group-hover:text-blue-600 transition-colors tracking-tight">Pharm</span>
+                <span className="text-[#B30000] group-hover:text-red-600 transition-colors tracking-tight">ienta</span>
+                <span className="inline-flex items-center justify-center ml-1">
+                  <svg className="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" fill="none" />
+                  </svg>
                 </span>
               </div>
               <span className={`text-[10px] tracking-wider uppercase font-semibold ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`} style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>

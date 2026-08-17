@@ -42,11 +42,14 @@ export const AboutPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
               />
             </div>
             <div className="flex flex-col text-left">
-              <div className="flex items-center gap-0 font-bold text-lg leading-tight" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
-                <span className="text-[#003366] dark:text-blue-400 tracking-tight">PHARM</span>
-                <span className="text-[#B30000] dark:text-red-400 tracking-tight">IENTA</span>
-                <span className="text-[10px] uppercase font-bold tracking-wider px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 ml-1.5">
-                  PRO
+              <div className="flex items-center gap-0 font-bold text-xl" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
+                <span className="text-[#003366] group-hover:text-blue-600 transition-colors tracking-tight">Pharm</span>
+                <span className="text-[#B30000] group-hover:text-red-600 transition-colors tracking-tight">ienta</span>
+                <span className="inline-flex items-center justify-center ml-1">
+                  <svg className="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    <path d="M9 12l2 2 4-4" stroke="white" strokeWidth="2" fill="none" />
+                  </svg>
                 </span>
               </div>
               <span className="text-[9px] text-slate-400 uppercase tracking-wider font-semibold" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>

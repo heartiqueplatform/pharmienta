@@ -60,8 +60,8 @@ export const ProblemSection: React.FC<ProblemSectionProps> = ({ onOpenTrial, isD
             <div
               key={item.id}
               className={`group rounded-3xl p-6 sm:p-8 transition-all duration-300 shadow-md hover:shadow-xl ${isDarkMode
-                  ? 'bg-[#161b22] text-[#c9d1d9]'
-                  : 'bg-white text-slate-800'
+                ? 'bg-[#161b22] text-[#c9d1d9]'
+                : 'bg-white text-slate-800'
                 }`}
             >
               <div className="flex items-start gap-4">
