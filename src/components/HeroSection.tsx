@@ -97,7 +97,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTrial, onOpenDem
             <span>Start 12-Month Free Trial</span>
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
-
+          {/*
           <button
             id="btn-hero-watch-demo"
             onClick={onOpenDemo}
@@ -109,6 +109,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onOpenTrial, onOpenDem
             <Play className="w-4 h-4 fill-emerald-600 text-emerald-600 dark:fill-emerald-400 dark:text-emerald-400" />
             <span>Watch 2-Min Interactive Demo</span>
           </button>
+          */}
         </div>
 
         {/* Trust Indicators Bar */}
