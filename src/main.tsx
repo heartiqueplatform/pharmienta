@@ -4,7 +4,7 @@ import App from './App.tsx';
 import './index.css';
 
 // Simple version-based cache buster
-const VERSION = '1.0.7'; // Increment this on each deploy
+const VERSION = '1.0.2'; // Increment this on each deploy
 
 // Check if page is outdated
 const checkForUpdates = () => {

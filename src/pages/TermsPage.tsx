@@ -48,7 +48,7 @@ export const TermsPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
                   </svg>
                 </span>
               </div>
-              <span className="text-[7px] sm:text-[8px] text-slate-400 uppercase tracking-wider font-semibold truncate" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
+              <span className="text-[7px] sm:text-[8px] text-slate-400  tracking-wider font-none truncate" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
                 Oriented To Care
               </span>
             </div>

@@ -14,7 +14,8 @@ import {
   Users,
   TrendingUp,
   Pill,
-  Award
+  Award,
+  FileText
 } from 'lucide-react';
 
 interface PageProps {
@@ -52,7 +53,7 @@ export const AboutPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
                   </svg>
                 </span>
               </div>
-              <span className="text-[7px] sm:text-[8px] text-slate-400 uppercase tracking-wider font-semibold truncate" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
+              <span className="text-[7px] sm:text-[8px] text-slate-400 tracking-wider font-none truncate" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
                 Oriented To Care
               </span>
             </div>
@@ -86,7 +87,6 @@ export const AboutPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-12">
         {/* Page Hero */}
         <div className="text-center space-y-4">
-
           <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-black font-heading tracking-tight ${isDarkMode ? 'text-white' : 'text-slate-900'
             }`}>
             Empowering Kenyan Chemists With Precision & Care
@@ -238,12 +238,63 @@ export const AboutPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
             </div>
           </div>
         </div>
+
+        {/* Legal Links - Privacy & Terms */}
+        <div className={`p-6 sm:p-8 rounded-3xl shadow-md ${isDarkMode ? 'bg-[#161b22]' : 'bg-white'}`}>
+          <h3 className={`text-sm font-bold mb-3 ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+            Legal & Compliance
+          </h3>
+          <div className="flex flex-wrap gap-4 text-xs">
+            <button
+              onClick={() => {
+                window.location.hash = 'privacy';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${isDarkMode ? 'hover:bg-[#0d1117] text-slate-400 hover:text-white' : 'hover:bg-slate-100 text-slate-600 hover:text-slate-900'
+                }`}
+            >
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Privacy Policy</span>
+            </button>
+            <button
+              onClick={() => {
+                window.location.hash = 'terms';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all ${isDarkMode ? 'hover:bg-[#0d1117] text-slate-400 hover:text-white' : 'hover:bg-slate-100 text-slate-600 hover:text-slate-900'
+                }`}
+            >
+              <FileText className="w-3.5 h-3.5" />
+              <span>Terms of Service</span>
+            </button>
+          </div>
+        </div>
       </main>
 
       {/* Footer */}
       <footer className={`py-8 text-center text-xs border-t ${isDarkMode ? 'bg-[#090d12] border-slate-800 text-slate-500' : 'bg-slate-100 border-slate-200 text-slate-600'
         }`}>
         <p>© 2024 Pharmienta Kenya • Oriented To Care • All Rights Reserved.</p>
+        <div className="flex items-center justify-center gap-4 mt-2">
+          <button
+            onClick={() => {
+              window.location.hash = 'privacy';
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="hover:underline"
+          >
+            Privacy Policy
+          </button>
+          <button
+            onClick={() => {
+              window.location.hash = 'terms';
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
+            className="hover:underline"
+          >
+            Terms of Service
+          </button>
+        </div>
       </footer>
     </div>
   );
