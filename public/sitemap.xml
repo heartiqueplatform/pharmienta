@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://pharmienta.co.ke/</loc>
+    <loc>https://pharmientapro.vercel.app/</loc>
     <lastmod>2026-08-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://pharmienta.co.ke/#features</loc>
-    <lastmod>2026-08-17</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://pharmienta.co.ke/#pricing</loc>
-    <lastmod>2026-08-17</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://pharmientapro.vercel.app/#features</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://pharmienta.co.ke/#faq</loc>
-    <lastmod>2026-08-17</lastmod>
+    <loc>https://pharmientapro.vercel.app/#benefits</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pharmientapro.vercel.app/#pricing</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://pharmientapro.vercel.app/#testimonials</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pharmientapro.vercel.app/#about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://pharmientapro.vercel.app/#faq</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>
