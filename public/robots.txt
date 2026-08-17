@@ -1,4 +1,6 @@
-User-agent: *
+﻿User-agent: *
 Allow: /
+Disallow: /api/
+Disallow: /private/
 
-Sitemap: https://pharmienta.co.ke/sitemap.xml
+Sitemap: https://pharmientapro.vercel.app/sitemap.xml
