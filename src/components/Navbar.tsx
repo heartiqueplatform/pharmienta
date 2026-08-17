@@ -101,7 +101,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial, onOpenDemo, onNavig
                   </svg>
                 </span>
               </div>
-              <span className={`text-[10px] tracking-wider uppercase font-semibold ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`} style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
+              <span className={`text-[8px] tracking-wider  font-none ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`} style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
                 Oriented To Care • Kenya
               </span>
             </div>
@@ -217,6 +217,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial, onOpenDemo, onNavig
             </div>
 
             <div className={`pt-3 flex flex-col gap-2.5 ${isDarkMode ? 'border-t border-slate-800' : 'border-t border-slate-100'}`}>
+              {/*
               <button
                 id="btn-mobile-drawer-demo"
                 onClick={() => {
@@ -229,6 +230,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenTrial, onOpenDemo, onNavig
                 <PlayCircle className="w-4 h-4 text-emerald-500" />
                 Watch 2-Min Interactive Demo
               </button>
+                */}
               <button
                 id="btn-mobile-drawer-trial"
                 onClick={() => {
