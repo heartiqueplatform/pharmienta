@@ -10,7 +10,9 @@ import {
   UserCheck,
   Database,
   Mail,
-  Phone
+  Phone,
+  Building2,
+  Store
 } from 'lucide-react';
 
 interface PageProps {
@@ -82,14 +84,13 @@ export const PrivacyPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = 
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-10">
         {/* Title Header */}
         <div className="text-center space-y-3">
-
           <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-black font-heading tracking-tight ${isDarkMode ? 'text-white' : 'text-slate-900'
             }`}>
             Privacy Policy & Data Security
           </h1>
 
           <p className="text-xs text-slate-400">
-            Last Updated: August 2024 • Version 2.4 • Effective for all Pharmienta Pro users in Kenya
+            Last Updated: August 2024 • Version 2.4 • Effective for all Pharmienta ecosystem users in Kenya
           </p>
         </div>
 
@@ -100,7 +101,21 @@ export const PrivacyPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = 
             Our Core Privacy Guarantee
           </h2>
           <p className={`text-sm leading-relaxed ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
-            Pharmienta Kenya ("we", "our", or "Pharmienta Pro") is committed to safeguarding the proprietary commercial data, inventory logs, counter sales records, and patient prescription information processed by your pharmacy. <strong>We do not sell, rent, or monetize your pharmacy's sales data or customer records to third-party pharmaceutical manufacturers or advertisers.</strong>
+            Pharmienta Kenya ("we", "our", or "Pharmienta") is committed to safeguarding the proprietary commercial data, inventory logs, counter sales records, and patient prescription information processed by your pharmacy. <strong>We do not sell, rent, or monetize your pharmacy's sales data or customer records to third-party pharmaceutical manufacturers or advertisers.</strong>
+          </p>
+        </div>
+
+        {/* Ecosystem Data Note */}
+        <div className={`p-4 rounded-xl text-sm ${isDarkMode ? 'bg-blue-900/10 border border-blue-900/30' : 'bg-blue-50 border border-blue-200'
+          }`}>
+          <div className="flex items-center gap-2 mb-1">
+            <ShieldCheck className={`w-4 h-4 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'}`} />
+            <span className={`font-semibold ${isDarkMode ? 'text-blue-300' : 'text-blue-700'}`}>
+              Data Protection Across the Ecosystem
+            </span>
+          </div>
+          <p className={`text-xs ${isDarkMode ? 'text-blue-200/80' : 'text-blue-600'}`}>
+            Our privacy commitment extends across both Pharmienta Pharmacy and Pharmienta Supplier platforms. Pharmacy ordering data shared with suppliers is limited to product names, quantities, and delivery requirements. Supplier pricing, margins, and internal supplier data remain confidential and are not shared with pharmacies.
           </p>
         </div>
 
@@ -114,11 +129,13 @@ export const PrivacyPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = 
               <h3>1. Information We Collect</h3>
             </div>
             <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
-              When you register for a 12-Month Pioneer License or use the Pharmienta Pro application, we process the following categories of information:
+              When you register for a 12-Month Pioneer License or use the Pharmienta ecosystem applications, we process the following categories of information:
             </p>
             <ul className="list-disc pl-5 space-y-1.5 text-slate-400">
               <li><strong>Pharmacy Account Data:</strong> Business name, branch locations, owner name, official phone number (e.g. 0717517371), email address, and Kenya Pharmacy & Poisons Board (PPB) premises registration number where applicable.</li>
+              <li><strong>Supplier Account Data:</strong> Business name, supplier license information, contact details, product catalogue, pricing, and stock levels.</li>
               <li><strong>Inventory & Transaction Records:</strong> Medicine catalog, batch numbers, expiry dates, supplier cost prices, retail prices, sales receipts, shift handover records, and customer request book logs.</li>
+              <li><strong>Order Data:</strong> Pharmacy orders placed through the system, including products, quantities, delivery information, and order status history.</li>
               <li><strong>M-Pesa Reconciliation Data:</strong> Transaction reference codes and confirmation amounts collected through Safaricom Till or Paybill numbers to ensure zero-discrepancy shift audits.</li>
               <li><strong>System Logs & Diagnostics:</strong> Browser type, IP addresses, timestamped login events, and audit logs to track staff operations and prevent internal shrinkage.</li>
             </ul>
@@ -131,7 +148,7 @@ export const PrivacyPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = 
               <h3>2. Data Encryption & Cloud Security Standards</h3>
             </div>
             <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
-              All data transmitted between your pharmacy counter terminals, mobile owner devices, and our cloud servers is encrypted using bank-grade TLS 1.3 cryptographic protocols. Data at rest is encrypted using AES-256 standards with automated multi-zone cloud replication to protect against hardware failure, device theft, or local network loss.
+              All data transmitted between your pharmacy counter terminals, mobile owner devices, supplier portals, and our cloud servers is encrypted using bank-grade TLS 1.3 cryptographic protocols. Data at rest is encrypted using AES-256 standards with automated multi-zone cloud replication to protect against hardware failure, device theft, or local network loss.
             </p>
           </div>
 
@@ -139,10 +156,10 @@ export const PrivacyPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = 
           <div className="space-y-3">
             <div className="flex items-center gap-2 font-bold text-base text-[#003366] dark:text-blue-400 font-heading">
               <Server className="w-5 h-5 text-emerald-500" />
-              <h3>3. Ownership of Pharmacy Data</h3>
+              <h3>3. Ownership of Data</h3>
             </div>
             <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
-              <strong>You maintain 100% full legal ownership of your pharmacy's database.</strong> You have the right at any time to export your entire drug catalog, sales ledger, customer request records, and batch lists in standardized CSV / Excel format without penalty or lock-in.
+              <strong>You maintain 100% full legal ownership of your pharmacy or supplier data.</strong> You have the right at any time to export your entire drug catalog, sales ledger, customer request records, batch lists, and order history in standardized CSV / Excel format without penalty or lock-in.
             </p>
           </div>
 
@@ -153,15 +170,34 @@ export const PrivacyPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = 
               <h3>4. Staff Access & Role-Based Permissions</h3>
             </div>
             <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
-              Pharmienta Pro provides granular role-based access control (RBAC). Pharmacy owners can restrict cashier and dispenser accounts from viewing supplier cost margins, total gross profits, or deleting historical transaction logs.
+              Pharmienta provides granular role-based access control (RBAC). Pharmacy owners can restrict cashier and dispenser accounts from viewing supplier cost margins, total gross profits, or deleting historical transaction logs. Supplier accounts have access only to their own data and orders from their connected pharmacy partners.
             </p>
           </div>
 
           {/* Section 5 */}
           <div className="space-y-3">
             <div className="flex items-center gap-2 font-bold text-base text-[#003366] dark:text-blue-400 font-heading">
+              <ShieldCheck className="w-5 h-5 text-emerald-500" />
+              <h3>5. Data Sharing Between Platforms</h3>
+            </div>
+            <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
+              When a pharmacy places an order through Pharmienta Pharmacy, the following information is shared with the selected supplier through Pharmienta Supplier:
+            </p>
+            <ul className="list-disc pl-5 space-y-1.5 text-slate-400">
+              <li>Pharmacy name and delivery location</li>
+              <li>Product names, quantities, and order reference</li>
+              <li>Delivery instructions and preferred delivery date</li>
+            </ul>
+            <p className={`mt-2 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+              <strong>Supplier data remains confidential:</strong> Supplier pricing, margins, cost prices, and internal stock levels are never shared with pharmacies through the platform.
+            </p>
+          </div>
+
+          {/* Section 6 */}
+          <div className="space-y-3">
+            <div className="flex items-center gap-2 font-bold text-base text-[#003366] dark:text-blue-400 font-heading">
               <FileText className="w-5 h-5 text-emerald-500" />
-              <h3>5. Contact the Data Protection Officer</h3>
+              <h3>6. Contact the Data Protection Officer</h3>
             </div>
             <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
               For any questions, data access requests, or regulatory inquiries regarding Kenya Data Protection Act compliance, please contact our Data Protection Officer:
@@ -169,7 +205,7 @@ export const PrivacyPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = 
             <div className={`p-4 rounded-2xl space-y-1 ${isDarkMode ? 'bg-[#0d1117]' : 'bg-slate-50'}`}>
               <p><strong>Pharmienta Kenya Data Office</strong></p>
               <p>Email: <a href="mailto:pharmienta@gmail.com" className="text-[#003366] dark:text-blue-400 font-bold hover:underline">pharmienta@gmail.com</a></p>
-              <p>Phone / WhatsApp: <a href="tel:0717517371" className="text-[#003366] dark:text-blue-400 font-bold hover:underline">0717 517 371</a></p>
+              <p>Phone / WhatsApp: <a href="tel:0717517371" className="text-[#003366] dark:text-blue-400 font-bold hover:underline">0704 473 503</a></p>
               <p>Address: Westlands Commercial Center, Nairobi, Kenya</p>
             </div>
           </div>

@@ -7,7 +7,9 @@ import {
   Globe,
   ShieldCheck,
   Moon,
-  Sun
+  Sun,
+  Building2,
+  Store
 } from 'lucide-react';
 
 interface FooterProps {
@@ -32,7 +34,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
               <div className="w-9 h-9 rounded-full overflow-hidden shadow-md shadow-[#003366]/20 ring-2 ring-[#003366]/10 flex-shrink-0">
                 <img
                   src="/pwa-192x192.png"
-                  alt="Pharmienta Pro"
+                  alt="Pharmienta"
                   className="w-full h-full object-cover"
                 />
               </div>
@@ -56,23 +58,38 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
             </button>
 
             <p className="text-slate-400 text-xs leading-relaxed max-w-sm" style={{ fontFamily: "'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif" }}>
-              The modern pharmacy management platform engineered to empower Kenyan community chemists with live stock math, customer request tracking, staff audit accountability, and real-time owner mobile dashboards.
+              The complete ecosystem for Kenyan pharmacies and pharmaceutical suppliers.
+              Manage pharmacy operations, place orders, receive orders, and fulfill stock — all connected through the Pharmienta network.
             </p>
 
-            <div className="flex items-center gap-2 pt-2 text-xs text-[#2ea043] font-medium">
-              <ShieldCheck className="w-4 h-4" />
-              <button
-                onClick={() => onNavigate ? onNavigate('privacy') : window.location.hash = '#privacy'}
-                className="hover:underline cursor-pointer"
-              >
-                Compliant with Kenya Data Protection Act 2019
-              </button>
+            <div className="flex flex-wrap items-center gap-3 pt-2 text-xs font-medium">
+              <div className="flex items-center gap-1.5 text-[#2ea043]">
+                <ShieldCheck className="w-4 h-4" />
+                <button
+                  onClick={() => onNavigate ? onNavigate('privacy') : window.location.hash = '#privacy'}
+                  className="hover:underline cursor-pointer text-slate-400 hover:text-white transition-colors"
+                >
+                  Kenya DPA 2019 Compliant
+                </button>
+              </div>
+              <span className="text-slate-600">•</span>
+              <div className="flex items-center gap-1.5 text-blue-400">
+                <Store className="w-4 h-4" />
+                <span className="text-slate-400">Pharmacy</span>
+              </div>
+              <span className="text-slate-600">+</span>
+              <div className="flex items-center gap-1.5 text-emerald-400">
+                <Building2 className="w-4 h-4" />
+                <span className="text-slate-400">Supplier</span>
+              </div>
             </div>
           </div>
-          {/* Col 2: Platform Links */}
+
+          {/* Col 2: Platform Links - Pharmacy */}
           <div className="space-y-3">
-            <h4 className="text-xs font-bold uppercase tracking-wider text-white font-heading">
-              Platform
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white font-heading flex items-center gap-2">
+              <Store className="w-3.5 h-3.5 text-blue-400" />
+              Pharmacy
             </h4>
             <ul className="space-y-2 text-xs text-slate-400">
               <li><a href="#features" className="hover:text-white transition-colors">Auto-Stock Deduction</a></li>
@@ -80,11 +97,27 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
               <li><a href="#features" className="hover:text-white transition-colors">Return Flow Restocking</a></li>
               <li><a href="#features" className="hover:text-white transition-colors">Staff Shift Audit</a></li>
               <li><a href="#bi-brain" className="hover:text-white transition-colors">Owner Mobile Dashboard</a></li>
-              <li><a href="https://pharmienta.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#2ea043] font-bold transition-colors">Launch Live Web App &rarr;</a></li>
+              <li><a href="https://pharmienta.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-[#2ea043] font-bold transition-colors">Launch Pharmacy App &rarr;</a></li>
             </ul>
           </div>
 
-          {/* Col 3: Resources & Company */}
+          {/* Col 3: Supplier Links */}
+          <div className="space-y-3">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-white font-heading flex items-center gap-2">
+              <Building2 className="w-3.5 h-3.5 text-emerald-400" />
+              Supplier
+            </h4>
+            <ul className="space-y-2 text-xs text-slate-400">
+              <li><a href="#supplier" className="hover:text-white transition-colors">Supplier Dashboard</a></li>
+              <li><a href="#supplier" className="hover:text-white transition-colors">Receive Orders</a></li>
+              <li><a href="#supplier" className="hover:text-white transition-colors">Stock Management</a></li>
+              <li><a href="#supplier" className="hover:text-white transition-colors">Order Fulfillment</a></li>
+              <li><a href="#supplier" className="hover:text-white transition-colors">Delivery Tracking</a></li>
+              <li><a href="https://pharmienta-suppliers.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-emerald-400 font-bold transition-colors">Launch Supplier App &rarr;</a></li>
+            </ul>
+          </div>
+
+          {/* Col 4: Company & Legal */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white font-heading">
               Company & Legal
@@ -95,7 +128,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
                   onClick={() => onNavigate ? onNavigate('about') : window.location.hash = '#about'}
                   className="hover:text-white transition-colors cursor-pointer text-left"
                 >
-                  About Pharmienta Kenya
+                  About Pharmienta
                 </button>
               </li>
               <li>
@@ -119,8 +152,8 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
             </ul>
           </div>
 
-          {/* Col 4: Contact & Kenya Office */}
-          <div className="space-y-3 lg:col-span-2">
+          {/* Col 5: Contact & Kenya Office */}
+          <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-wider text-white font-heading">
               Nairobi Operations Office
             </h4>
@@ -131,7 +164,7 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                <a href="tel:0717517371" className="hover:text-white font-bold transition-colors">0717 517 371(Call & WhatsApp)</a>
+                <a href="tel:0704473503" className="hover:text-white font-bold transition-colors">0704 473 503 (Call & WhatsApp)</a>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-rose-400 shrink-0" />
@@ -151,6 +184,8 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
             <span>© 2024 Pharmienta Kenya. All rights reserved.</span>
             <span>•</span>
             <span className="text-slate-400">"Oriented To Care"</span>
+            <span>•</span>
+            <span className="text-slate-500">Pharmacy + Supplier Ecosystem</span>
           </div>
 
           <div className="flex flex-wrap items-center gap-6">
@@ -195,4 +230,3 @@ export const Footer: React.FC<FooterProps> = ({ isDarkMode = false, onToggleDark
     </footer>
   );
 };
-

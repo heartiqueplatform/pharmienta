@@ -15,7 +15,10 @@ import {
   TrendingUp,
   Pill,
   Award,
-  FileText
+  FileText,
+  Store,
+  Package,
+  ArrowRight
 } from 'lucide-react';
 
 interface PageProps {
@@ -96,6 +99,115 @@ export const AboutPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
             }`}>
             Our slogan is <strong>"Oriented To Care"</strong>. We build intelligent, zero-leakage pharmacy management technology tailored to the daily realities of Kenyan community chemists and dispensing pharmacies.
           </p>
+        </div>
+
+        {/* The Pharmienta Ecosystem - NEW */}
+        <div className={`p-6 sm:p-8 rounded-3xl shadow-xl space-y-6 ${isDarkMode ? 'bg-[#161b22]' : 'bg-white'
+          }`}>
+          <div className="text-center">
+            <h2 className={`text-2xl font-bold font-heading ${isDarkMode ? 'text-white' : 'text-slate-900'}`}>
+              The Pharmienta Ecosystem
+            </h2>
+            <p className={`text-sm mt-2 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'}`}>
+              A complete digital supply network connecting pharmacies and suppliers
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Pharmacy Side */}
+            <div className={`p-6 rounded-2xl ${isDarkMode ? 'bg-[#0d1117] border border-gray-800' : 'bg-slate-50 border border-gray-200'
+              }`}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${isDarkMode ? 'bg-blue-900/30' : 'bg-blue-100'
+                  }`}>
+                  <Store className={`w-5 h-5 ${isDarkMode ? 'text-blue-400' : 'text-blue-600'
+                    }`} />
+                </div>
+                <h3 className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'
+                  }`}>
+                  Pharmienta Pharmacy
+                </h3>
+              </div>
+              <p className={`text-sm mb-3 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'
+                }`}>
+                The complete pharmacy management system for Kenyan chemists. Manage inventory, sales, prescriptions, and place orders with suppliers.
+              </p>
+              <div className="space-y-1.5 text-xs">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2ea043] shrink-0" />
+                  <span className={isDarkMode ? 'text-slate-400' : 'text-slate-600'}>Inventory & stock management</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2ea043] shrink-0" />
+                  <span className={isDarkMode ? 'text-slate-400' : 'text-slate-600'}>Sales & prescription tracking</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2ea043] shrink-0" />
+                  <span className={isDarkMode ? 'text-slate-400' : 'text-slate-600'}>Supplier ordering & procurement</span>
+                </div>
+              </div>
+              <a
+                href="https://pharmienta.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-[#003366] dark:text-blue-400 hover:underline"
+              >
+                Learn more about Pharmacy
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
+            {/* Supplier Side */}
+            <div className={`p-6 rounded-2xl ${isDarkMode ? 'bg-[#0d1117] border border-gray-800' : 'bg-slate-50 border border-gray-200'
+              }`}>
+              <div className="flex items-center gap-3 mb-4">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${isDarkMode ? 'bg-emerald-900/30' : 'bg-emerald-100'
+                  }`}>
+                  <Building2 className={`w-5 h-5 ${isDarkMode ? 'text-emerald-400' : 'text-emerald-600'
+                    }`} />
+                </div>
+                <h3 className={`text-lg font-bold ${isDarkMode ? 'text-white' : 'text-slate-900'
+                  }`}>
+                  Pharmienta Supplier
+                </h3>
+              </div>
+              <p className={`text-sm mb-3 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'
+                }`}>
+                The dedicated supplier platform for pharmaceutical distributors. Receive orders, manage stock, fulfill orders, and track deliveries.
+              </p>
+              <div className="space-y-1.5 text-xs">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2ea043] shrink-0" />
+                  <span className={isDarkMode ? 'text-slate-400' : 'text-slate-600'}>Receive & manage pharmacy orders</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2ea043] shrink-0" />
+                  <span className={isDarkMode ? 'text-slate-400' : 'text-slate-600'}>Product catalogue & stock control</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#2ea043] shrink-0" />
+                  <span className={isDarkMode ? 'text-slate-400' : 'text-slate-600'}>Order fulfillment & delivery tracking</span>
+                </div>
+              </div>
+              <a
+                href="https://pharmienta-suppliers.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-[#003366] dark:text-blue-400 hover:underline"
+              >
+                Learn more about Supplier
+                <ArrowRight className="w-3.5 h-3.5" />
+              </a>
+            </div>
+          </div>
+
+          {/* Ecosystem Connection Note */}
+          <div className={`p-4 rounded-xl text-center text-sm ${isDarkMode ? 'bg-blue-900/10 border border-blue-900/30' : 'bg-blue-50 border border-blue-200'
+            }`}>
+            <p className={isDarkMode ? 'text-blue-300' : 'text-blue-700'}>
+              <strong>Connected Ecosystem:</strong> Pharmacies order stock through Pharmienta Pharmacy. Suppliers receive and fulfill orders through Pharmienta Supplier. The two platforms work together seamlessly.
+            </p>
+          </div>
         </div>
 
         {/* Mission & Vision Cards */}

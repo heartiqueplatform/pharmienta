@@ -10,7 +10,9 @@ import {
   CheckCircle,
   HelpCircle,
   Phone,
-  Mail
+  Mail,
+  Building2,
+  Store
 } from 'lucide-react';
 
 interface PageProps {
@@ -82,15 +84,13 @@ export const TermsPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
       <main className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 space-y-10">
         {/* Title Header */}
         <div className="text-center space-y-3">
-
-
           <h1 className={`text-3xl sm:text-4xl lg:text-5xl font-black font-heading tracking-tight ${isDarkMode ? 'text-white' : 'text-slate-900'
             }`}>
             Terms of Service
           </h1>
 
           <p className="text-xs text-slate-400">
-            Last Revised: August 2024 • Applicable to Pharmienta Pro Platform & Services in Kenya
+            Last Revised: August 2024 • Applicable to Pharmienta Ecosystem Platforms & Services in Kenya
           </p>
         </div>
 
@@ -106,6 +106,20 @@ export const TermsPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
           </p>
         </div>
 
+        {/* Ecosystem Note */}
+        <div className={`p-4 rounded-xl text-sm ${isDarkMode ? 'bg-emerald-900/10 border border-emerald-900/30' : 'bg-emerald-50 border border-emerald-200'
+          }`}>
+          <div className="flex items-center gap-2 mb-1">
+            <Building2 className={`w-4 h-4 ${isDarkMode ? 'text-emerald-400' : 'text-emerald-600'}`} />
+            <span className={`font-semibold ${isDarkMode ? 'text-emerald-300' : 'text-emerald-700'}`}>
+              Two Platforms, One Ecosystem
+            </span>
+          </div>
+          <p className={`text-xs ${isDarkMode ? 'text-emerald-200/80' : 'text-emerald-600'}`}>
+            These Terms of Service apply to both <strong>Pharmienta Pharmacy</strong> (the pharmacy management platform) and <strong>Pharmienta Supplier</strong> (the supplier platform). Users of either platform agree to these terms governing their use of the Pharmienta ecosystem.
+          </p>
+        </div>
+
         {/* Detailed Terms */}
         <div className={`p-8 rounded-3xl shadow-xl space-y-8 text-xs sm:text-sm leading-relaxed ${isDarkMode ? 'bg-[#161b22]' : 'bg-white'
           }`}>
@@ -115,44 +129,59 @@ export const TermsPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
               1. Acceptance of Terms & Eligibility
             </h3>
             <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
-              By accessing or using Pharmienta Pro, you certify that you are operating an authorized community pharmacy, retail chemist, clinical dispensary, or related healthcare facility in accordance with the Laws of Kenya and relevant directives of the Pharmacy and Poisons Board (PPB).
+              By accessing or using any Pharmienta platform, you certify that you are operating an authorized community pharmacy, retail chemist, clinical dispensary, pharmaceutical distribution business, or related healthcare facility in accordance with the Laws of Kenya and relevant directives of the Pharmacy and Poisons Board (PPB).
             </p>
           </div>
 
           {/* Section 2 */}
           <div className="space-y-3">
             <h3 className="text-base font-bold text-[#003366] dark:text-blue-400 font-heading">
-              2. Account Security & Dispenser Credentials
+              2. Account Security & Credentials
             </h3>
             <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
-              Pharmacy owners and administrators are responsible for maintaining the confidentiality of staff login pins and passwords. Any action conducted under an authorized user account (including dispensing, returns processing, and price overrides) will be recorded in the immutable audit log.
+              Pharmacy owners, administrators, and supplier representatives are responsible for maintaining the confidentiality of staff login credentials, pins, and passwords. Any action conducted under an authorized user account (including dispensing, returns processing, price overrides, or order fulfillment) will be recorded in the immutable audit log.
             </p>
           </div>
 
           {/* Section 3 */}
           <div className="space-y-3">
             <h3 className="text-base font-bold text-[#003366] dark:text-blue-400 font-heading">
-              3. Service Level Agreement (SLA) & 99.9% Cloud Uptime
+              3. Service Level Agreement (SLA) & Cloud Uptime
             </h3>
             <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
-              We strive to provide 99.9% cloud availability. Scheduled system updates are performed outside standard Kenyan operating hours (typically 01:00 to 03:00 EAT). The system also features local offline resilience to ensure counter sales continue uninterrupted even during temporary internet downtime.
+              We strive to provide 99.9% cloud availability for all Pharmienta platforms. Scheduled system updates are performed outside standard Kenyan operating hours (typically 01:00 to 03:00 EAT). The pharmacy platform features local offline resilience to ensure counter sales continue uninterrupted even during temporary internet downtime.
             </p>
           </div>
 
           {/* Section 4 */}
           <div className="space-y-3">
             <h3 className="text-base font-bold text-[#003366] dark:text-blue-400 font-heading">
-              4. Clinical Responsibility & Prescription Verification
+              4. Order Transactions & Platform Use
             </h3>
             <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
-              Pharmienta Pro is an inventory management, point-of-sale, and business intelligence tool. It does not replace the professional clinical judgment, prescription verification, dosage evaluation, or patient counseling duties of a licensed pharmacist or pharmaceutical technologist.
+              <strong>Pharmienta Pharmacy</strong> is used to manage pharmacy operations and place orders with suppliers. <strong>Pharmienta Supplier</strong> is used to receive and fulfill those orders. Both platforms are intended for legitimate pharmaceutical supply chain activities. Users agree not to use the platforms for unauthorized, fraudulent, or illegal transactions.
             </p>
+            <ul className="list-disc pl-5 space-y-1.5 text-slate-400">
+              <li>Pharmacies are responsible for verifying supplier product quality and authenticity upon delivery.</li>
+              <li>Suppliers are responsible for accurate product listings, pricing, and stock availability.</li>
+              <li>Disputes between pharmacies and suppliers regarding orders are the responsibility of the parties involved.</li>
+            </ul>
           </div>
 
           {/* Section 5 */}
           <div className="space-y-3">
             <h3 className="text-base font-bold text-[#003366] dark:text-blue-400 font-heading">
-              5. Customer Support & Resolution
+              5. Clinical Responsibility & Professional Judgment
+            </h3>
+            <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
+              Pharmienta platforms are inventory management, point-of-sale, supply chain, and business intelligence tools. They do not replace the professional clinical judgment, prescription verification, dosage evaluation, or patient counseling duties of a licensed pharmacist or pharmaceutical technologist.
+            </p>
+          </div>
+
+          {/* Section 6 */}
+          <div className="space-y-3">
+            <h3 className="text-base font-bold text-[#003366] dark:text-blue-400 font-heading">
+              6. Customer Support & Resolution
             </h3>
             <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
               All active users receive priority support via dedicated Kenyan phone and WhatsApp channels:
@@ -163,6 +192,16 @@ export const TermsPage: React.FC<PageProps> = ({ onNavigateHome, isDarkMode = fa
               <p>Email: <a href="mailto:pharmienta@gmail.com" className="text-[#003366] dark:text-blue-400 font-bold hover:underline">pharmienta@gmail.com</a></p>
               <p>Support Hours: Monday to Saturday, 7:00 AM – 10:00 PM EAT</p>
             </div>
+          </div>
+
+          {/* Section 7 */}
+          <div className="space-y-3">
+            <h3 className="text-base font-bold text-[#003366] dark:text-blue-400 font-heading">
+              7. Data Protection & Compliance
+            </h3>
+            <p className={isDarkMode ? 'text-slate-300' : 'text-slate-600'}>
+              Pharmienta complies with the Kenya Data Protection Act (2019). All personal and business data is handled in accordance with our Privacy Policy. Suppliers receive only order-specific information from pharmacies, and pharmacy pricing and margin data remain confidential.
+            </p>
           </div>
         </div>
       </main>

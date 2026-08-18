@@ -3,7 +3,9 @@ import {
   ChevronDown,
   HelpCircle,
   Search,
-  PhoneCall
+  PhoneCall,
+  Store,
+  Building2
 } from 'lucide-react';
 import { FAQS } from '../data/landingData';
 
@@ -16,7 +18,14 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ isDarkMode = false }) =>
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
 
-  const categories = ['All', 'Stock & Inventory', 'Owner Dashboard & Audits', 'Payments & M-Pesa', 'Setup & Security'];
+  const categories = [
+    'All',
+    'Stock & Inventory',
+    'Owner Dashboard & Audits',
+    'Payments & M-Pesa',
+    'Setup & Security',
+    'Supplier Platform'
+  ];
 
   const filteredFaqs = FAQS.filter((faq) => {
     const matchesCategory = selectedCategory === 'All' || faq.category === selectedCategory;
@@ -36,8 +45,6 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ isDarkMode = false }) =>
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-
-
           <h2 className={`text-3xl sm:text-4xl font-extrabold font-heading tracking-tight mb-4 ${isDarkMode ? 'text-white' : 'text-slate-900'
             }`}>
             Everything You Need to Know
@@ -45,8 +52,23 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ isDarkMode = false }) =>
 
           <p className={`text-sm sm:text-base ${isDarkMode ? 'text-slate-300' : 'text-slate-600'
             }`}>
-            Clear answers about quick setup, auto-stock math, returns restocking, owner mobile dashboards, and cloud backup.
+            Clear answers about the Pharmienta ecosystem — Pharmacy management, supplier platform, setup, stock, orders, and more.
           </p>
+        </div>
+
+        {/* Ecosystem Badges */}
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+          <span className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium ${isDarkMode ? 'bg-[#1c2333] text-blue-400' : 'bg-blue-50 text-blue-700'
+            }`}>
+            <Store className="w-4 h-4" />
+            Pharmacy
+          </span>
+          <span className="text-slate-400 text-sm font-light">+</span>
+          <span className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium ${isDarkMode ? 'bg-[#1c2333] text-emerald-400' : 'bg-emerald-50 text-emerald-700'
+            }`}>
+            <Building2 className="w-4 h-4" />
+            Supplier
+          </span>
         </div>
 
         {/* Search & Category Filter Bar - NO BORDERS */}
@@ -56,7 +78,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ isDarkMode = false }) =>
             <input
               id="input-faq-search"
               type="text"
-              placeholder="Search e.g. stock, returns, owner dashboard, M-Pesa, free pioneer..."
+              placeholder="Search e.g. stock, returns, owner dashboard, M-Pesa, supplier orders..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className={`w-full pl-11 pr-4 py-3.5 rounded-2xl text-sm focus:outline-none focus:ring-2 focus:ring-[#003366] transition-all shadow-sm ${isDarkMode
@@ -78,6 +100,9 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ isDarkMode = false }) =>
                     : 'bg-white text-slate-700 hover:bg-slate-50'
                   }`}
               >
+                {cat === 'Supplier Platform' && (
+                  <Building2 className="w-3 h-3 inline mr-1.5" />
+                )}
                 {cat}
               </button>
             ))}
@@ -103,6 +128,9 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ isDarkMode = false }) =>
                     <div className="flex items-center gap-3">
                       <span className={`text-[11px] px-2.5 py-1 rounded-lg font-bold hidden sm:inline ${isDarkMode ? 'bg-[#21262d] text-slate-300' : 'bg-slate-100 text-slate-600'
                         }`}>
+                        {faq.category === 'Supplier Platform' && (
+                          <Building2 className="w-3 h-3 inline mr-1" />
+                        )}
                         {faq.category}
                       </span>
                       <span className={`text-base font-bold font-heading ${isDarkMode ? 'text-white' : 'text-slate-900'
@@ -143,21 +171,20 @@ export const FaqSection: React.FC<FaqSectionProps> = ({ isDarkMode = false }) =>
               Have a question not listed here?
             </h4>
             <p className="text-xs text-slate-400 mt-0.5">
-              Our Nairobi pharmacy support team is on call to assist you in English and Swahili.
+              Our Nairobi support team is on call to assist pharmacies and suppliers in English and Swahili.
             </p>
           </div>
           <a
-            href="https://wa.me/254717517371?text=Hello%20Pharmienta%20Team%2C%20I%20have%20a%20question%20about%20the%20pharmacy%20software"
+            href="https://wa.me/254704473503?text=Hello%20Pharmienta%20Team%2C%20I%20have%20a%20question%20about%20the%20pharmacy%20ecosystem"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#2ea043] hover:bg-[#2c973f] text-white font-bold text-xs shadow-md transition-all shrink-0"
           >
             <PhoneCall className="w-3.5 h-3.5" />
-            <span>Chat on WhatsApp (0717517371)</span>
+            <span>Chat on WhatsApp (0704 473 503)</span>
           </a>
         </div>
       </div>
     </section>
   );
 };
-

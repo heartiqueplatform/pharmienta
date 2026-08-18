@@ -18,6 +18,13 @@ import { AboutPage } from './pages/AboutPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { TermsPage } from './pages/TermsPage';
 
+// NEW: Import Supplier sections
+import { SupplierHeroSection } from './components/SupplierHeroSection';
+import { SupplierFeaturesSection } from './components/SupplierFeaturesSection';
+import { SupplierWorkflowSection } from './components/SupplierWorkflowSection';
+import { SupplierBenefitsSection } from './components/SupplierBenefitsSection';
+import { SupplierCTASection } from './components/SupplierCTASection';
+
 export type CurrentPageView = 'home' | 'about' | 'privacy' | 'terms';
 
 export default function App() {
@@ -31,7 +38,7 @@ export default function App() {
 
   const [isTrialModalOpen, setIsTrialModalOpen] = useState(false);
   const [isDemoModalOpen, setIsDemoModalOpen] = useState(false);
-  
+
   // Default is LIGHT MODE as requested
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem('pharmienta_theme') === 'dark';
@@ -49,7 +56,7 @@ export default function App() {
       } else if (hash === '#terms') {
         setCurrentPage('terms');
         window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else if (hash === '#home' || hash === '' || hash.startsWith('#features') || hash.startsWith('#pricing') || hash.startsWith('#bi-brain') || hash.startsWith('#problem') || hash.startsWith('#benefits') || hash.startsWith('#faq') || hash.startsWith('#testimonials')) {
+      } else if (hash === '#home' || hash === '' || hash.startsWith('#features') || hash.startsWith('#pricing') || hash.startsWith('#bi-brain') || hash.startsWith('#problem') || hash.startsWith('#benefits') || hash.startsWith('#faq') || hash.startsWith('#testimonials') || hash.startsWith('#supplier')) {
         setCurrentPage('home');
       }
     };
@@ -91,6 +98,9 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  // Supplier link constant
+  const SUPPLIER_APP_URL = 'https://pharmienta-suppliers.vercel.app/';
+
   // Render standalone pages if selected
   if (currentPage === 'about') {
     return <AboutPage onNavigateHome={() => handleNavigate('home')} isDarkMode={isDarkMode} />;
@@ -105,91 +115,122 @@ export default function App() {
   }
 
   return (
-    <div className={`min-h-screen font-sans selection:bg-[#003366] selection:text-white flex flex-col justify-between transition-colors duration-200 ${
-      isDarkMode ? 'bg-[#0d1117] text-[#c9d1d9]' : 'bg-slate-50 text-slate-800'
-    }`}>
+    <div className={`min-h-screen font-sans selection:bg-[#003366] selection:text-white flex flex-col justify-between transition-colors duration-200 ${isDarkMode ? 'bg-[#0d1117] text-[#c9d1d9]' : 'bg-slate-50 text-slate-800'
+      }`}>
       {/* Navigation */}
-      <Navbar 
-        onOpenTrial={handleOpenTrial} 
+      <Navbar
+        onOpenTrial={handleOpenTrial}
         onOpenDemo={handleOpenDemo}
         onNavigate={handleNavigate}
         isDarkMode={isDarkMode}
       />
 
-      {/* 10 Required Sections in Order */}
+      {/* Main Content */}
       <main className="flex-grow">
         {/* Section 1: Hero */}
-        <HeroSection 
-          onOpenTrial={handleOpenTrial} 
+        <HeroSection
+          onOpenTrial={handleOpenTrial}
           onOpenDemo={handleOpenDemo}
           isDarkMode={isDarkMode}
         />
 
         {/* Section 2: Problem Statement */}
-        <ProblemSection 
-          onOpenTrial={handleOpenTrial} 
+        <ProblemSection
+          onOpenTrial={handleOpenTrial}
           isDarkMode={isDarkMode}
         />
 
         {/* Section 3: Features Showcase */}
-        <FeaturesSection 
-          onOpenTrial={handleOpenTrial} 
+        <FeaturesSection
+          onOpenTrial={handleOpenTrial}
           isDarkMode={isDarkMode}
         />
 
         {/* Section 4: Benefits Section */}
-        <BenefitsSection 
-          onOpenTrial={handleOpenTrial} 
+        <BenefitsSection
+          onOpenTrial={handleOpenTrial}
           isDarkMode={isDarkMode}
         />
 
         {/* Section 5: Business Intelligence Showcase */}
-        <BiShowcaseSection 
-          onOpenTrial={handleOpenTrial} 
-          onOpenDemo={handleOpenDemo} 
+        <BiShowcaseSection
+          onOpenTrial={handleOpenTrial}
+          onOpenDemo={handleOpenDemo}
           isDarkMode={isDarkMode}
         />
 
-        {/* Section 6: Testimonials & Trust */}
-        <TestimonialsSection 
+        {/* ========== NEW SUPPLIER SECTIONS ========== */}
+
+        {/* Section 6: Supplier Hero - Introduce the Supplier System */}
+        <SupplierHeroSection
+          isDarkMode={isDarkMode}
+          onGetStarted={() => window.open(SUPPLIER_APP_URL, '_blank', 'noopener,noreferrer')}
+        />
+
+        {/* Section 7: Supplier Features - What suppliers can do */}
+        <SupplierFeaturesSection
           isDarkMode={isDarkMode}
         />
 
-        {/* Section 7: Pricing Section */}
-        <PricingSection 
-          onOpenTrial={handleOpenTrial} 
+        {/* Section 8: Supplier Workflow - How it works end-to-end */}
+        <SupplierWorkflowSection
           isDarkMode={isDarkMode}
         />
 
-        {/* Section 8: FAQ Section */}
-        <FaqSection 
+        {/* Section 9: Supplier Benefits - Why join the network */}
+        <SupplierBenefitsSection
+          isDarkMode={isDarkMode}
+          onGetStarted={() => window.open(SUPPLIER_APP_URL, '_blank', 'noopener,noreferrer')}
+        />
+
+        {/* ========== END NEW SUPPLIER SECTIONS ========== */}
+
+        {/* Section 10: Testimonials & Trust */}
+        <TestimonialsSection
           isDarkMode={isDarkMode}
         />
 
-        {/* Section 9: CTA Section */}
-        <CtaSection 
-          onOpenTrial={handleOpenTrial} 
+        {/* Section 11: Pricing Section */}
+        <PricingSection
+          onOpenTrial={handleOpenTrial}
           isDarkMode={isDarkMode}
+        />
+
+        {/* Section 12: FAQ Section */}
+        <FaqSection
+          isDarkMode={isDarkMode}
+        />
+
+        {/* Section 13: CTA Section */}
+        <CtaSection
+          onOpenTrial={handleOpenTrial}
+          isDarkMode={isDarkMode}
+        />
+
+        {/* Section 14: Supplier CTA - Specific call to action for suppliers */}
+        <SupplierCTASection
+          isDarkMode={isDarkMode}
+          onJoinNetwork={() => window.open(SUPPLIER_APP_URL, '_blank', 'noopener,noreferrer')}
         />
       </main>
 
-      {/* Section 10: Footer (with discrete dark mode toggle & real links) */}
-      <Footer 
+      {/* Footer (with discrete dark mode toggle & real links) */}
+      <Footer
         isDarkMode={isDarkMode}
         onToggleDarkMode={handleToggleDarkMode}
         onNavigate={handleNavigate}
       />
 
       {/* Interactive Modals & Widgets */}
-      <FreeTrialModal 
-        isOpen={isTrialModalOpen} 
+      <FreeTrialModal
+        isOpen={isTrialModalOpen}
         onClose={() => setIsTrialModalOpen(false)}
         isDarkMode={isDarkMode}
       />
 
-      <DemoModal 
-        isOpen={isDemoModalOpen} 
-        onClose={() => setIsDemoModalOpen(false)} 
+      <DemoModal
+        isOpen={isDemoModalOpen}
+        onClose={() => setIsDemoModalOpen(false)}
         onOpenTrial={handleOpenTrial}
         isDarkMode={isDarkMode}
       />
@@ -199,4 +240,3 @@ export default function App() {
     </div>
   );
 }
-

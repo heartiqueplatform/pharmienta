@@ -115,7 +115,7 @@ export const BENEFITS: Benefit[] = [
     id: 'revenue-boost',
     metric: '+35%',
     title: 'Stop Revenue Leaks & Stock More High-Demand Drugs',
-    description: 'Pharmienta Pro helps community pharmacies eliminate unaccounted till shortages, prioritize high-turnover medicines via the Request Book, and boost daily counter profits.',
+    description: 'Pharmienta helps community pharmacies eliminate unaccounted till shortages, prioritize high-turnover medicines via the Request Book, and boost daily counter profits.',
     detailPoints: [
       'Customer Request Book reveals exact medicines patients are seeking',
       'Real-time staff sales audit stops unauthorized price tampering and till shortages',
@@ -165,7 +165,8 @@ export const BENEFITS: Benefit[] = [
   }
 ];
 
-export const TESTIMONIALS: Testimonial[] = [
+// ===== PHARMACY TESTIMONIALS =====
+export const PHARMACY_TESTIMONIALS: Testimonial[] = [
   {
     id: 'test-1',
     name: 'Dr. Faith Mutua, BPharm',
@@ -196,7 +197,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: 'Managing Pharmacist',
     pharmacyName: 'Coastline Medicare Pharmacy',
     location: 'Nyali, Mombasa',
-    quote: 'We used to throw away thousands of shillings in expired syrups and antibiotics because we couldn’t track batches. Pharmienta’s FEFO alerts make sure we dispense older batches first. Plus, the 12-month free pioneer offer was 100% genuine—no hidden fees!',
+    quote: 'We used to throw away thousands of shillings in expired syrups and antibiotics because we couldn\'t track batches. Pharmienta\'s FEFO alerts make sure we dispense older batches first. Plus, the 12-month free pioneer offer was 100% genuine—no hidden fees!',
     avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&auto=format&fit=crop&q=80',
     rating: 5,
     verified: true,
@@ -216,6 +217,64 @@ export const TESTIMONIALS: Testimonial[] = [
   }
 ];
 
+// ===== SUPPLIER TESTIMONIALS =====
+export const SUPPLIER_TESTIMONIALS: Testimonial[] = [
+  {
+    id: 'supplier-test-1',
+    name: 'James Mwangi',
+    role: 'Managing Director',
+    pharmacyName: 'Afya Distributors Ltd',
+    location: 'Industrial Area, Nairobi',
+    quote: 'Pharmienta Supplier has completely transformed how we manage pharmacy orders. Before, we were handling orders through WhatsApp and phone calls — it was chaos. Now we receive digital orders, track stock in real-time, and dispatch with confidence. Our order accuracy has improved by 95%.',
+    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
+    verified: true,
+    impactMetric: '95% order accuracy improvement'
+  },
+  {
+    id: 'supplier-test-2',
+    name: 'Grace Akinyi',
+    role: 'Operations Manager',
+    pharmacyName: 'MediSource Kenya',
+    location: 'Mombasa Road, Nairobi',
+    quote: 'The supplier dashboard gives us instant visibility into what stock we have, what\'s reserved for orders, and what needs restocking. We\'ve reduced stockouts by 60% and our team can now fulfil orders in half the time. The notification system ensures we never miss a pharmacy order.',
+    avatar: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
+    verified: true,
+    impactMetric: '60% reduction in stockouts'
+  },
+  {
+    id: 'supplier-test-3',
+    name: 'Dr. Peter Odhiambo',
+    role: 'CEO',
+    pharmacyName: 'PharmaConnect Suppliers',
+    location: 'Kisumu',
+    quote: 'Being connected to Pharmienta pharmacies has opened up new markets for us. We\'ve grown our pharmacy customer base by 40% in just 3 months. The platform makes it easy to manage pricing, stock levels, and deliveries. It\'s the future of pharmaceutical supply in Kenya.',
+    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
+    verified: true,
+    impactMetric: '40% customer base growth'
+  },
+  {
+    id: 'supplier-test-4',
+    name: 'Mary Wanjiru',
+    role: 'Supply Chain Director',
+    pharmacyName: 'HealthLink Distributors',
+    location: 'Thika Road, Nairobi',
+    quote: 'The batch and expiry management features have been a game-changer. We can now track exactly which batch went to which pharmacy, and the FEFO approach helps us manage expiry dates proactively. Our compliance reporting has never been easier or more accurate.',
+    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&auto=format&fit=crop&q=80',
+    rating: 5,
+    verified: true,
+    impactMetric: '100% batch traceability achieved'
+  }
+];
+
+// Combine all testimonials for backward compatibility
+export const TESTIMONIALS: Testimonial[] = [
+  ...PHARMACY_TESTIMONIALS,
+  ...SUPPLIER_TESTIMONIALS
+];
+
 export const STATS = [
   { label: 'Active Kenyan Pharmacies', value: 50, suffix: '+', icon: 'Building' },
   { label: 'Dispensing Accuracy', value: 99.9, suffix: '%', icon: 'CheckCircle2' },
@@ -224,10 +283,11 @@ export const STATS = [
 ];
 
 export const FAQS: FaqItem[] = [
+  // ===== PHARMACY FAQS =====
   {
     id: 'faq-setup',
     category: 'Setup & Security',
-    question: 'How fast can I set up Pharmienta Pro for my pharmacy?',
+    question: 'How fast can I set up Pharmienta for my pharmacy?',
     answer: 'You can be up and selling in a single day! Adding items is quick and straightforward with our smart search and pre-filled pharmaceutical catalog. If you already have an Excel list of your inventory or export from old software, our Nairobi team will import all your medicines and prices for free.'
   },
   {
@@ -240,7 +300,7 @@ export const FAQS: FaqItem[] = [
     id: 'faq-returns',
     category: 'Stock & Inventory',
     question: 'What happens when a customer returns a medicine?',
-    answer: 'Pharmienta Pro features a clean return & refund workflow. When a return is processed, the system logs the reason, notes the staff member handling it, and automatically restores the returned quantity back into your active stock count so your inventory remains 100% accurate.'
+    answer: 'Pharmienta features a clean return & refund workflow. When a return is processed, the system logs the reason, notes the staff member handling it, and automatically restores the returned quantity back into your active stock count so your inventory remains 100% accurate.'
   },
   {
     id: 'faq-request-book',
@@ -270,13 +330,87 @@ export const FAQS: FaqItem[] = [
     id: 'faq-pioneer-offer',
     category: 'Setup & Security',
     question: 'How does the 12-Month Free Pioneer Offer work?',
-    answer: 'The first 50 Kenyan pharmacies that sign up get full unrestricted access to Pharmienta Pro completely FREE for an entire year (12 months). There are zero setup fees, no credit card required, and no hidden costs. After your free year, you can continue at our affordable rate of only KES 299/month or KES 2,990/year.'
+    answer: 'The first 50 Kenyan pharmacies that sign up get full unrestricted access to Pharmienta completely FREE for an entire year (12 months). There are zero setup fees, no credit card required, and no hidden costs. After your free year, you can continue at our affordable rate of only KES 299/month or KES 2,990/year.'
   },
   {
     id: 'faq-data-safety',
     category: 'Setup & Security',
     question: 'Is my pharmacy inventory and sales data safe from loss?',
-    answer: 'Yes. Pharmienta Pro uses cloud architecture with automated continuous backups. Even if your shop computer breaks, gets stolen, or suffers power failure, your inventory, sales history, and customer records are safely backed up in the cloud with zero data loss.'
+    answer: 'Yes. Pharmienta uses cloud architecture with automated continuous backups. Even if your shop computer breaks, gets stolen, or suffers power failure, your inventory, sales history, and customer records are safely backed up in the cloud with zero data loss.'
+  },
+
+  // ===== SUPPLIER FAQS =====
+  {
+    id: 'faq-supplier-what',
+    category: 'Supplier Platform',
+    question: 'What is Pharmienta Supplier and how does it work?',
+    answer: 'Pharmienta Supplier is a dedicated platform for pharmaceutical suppliers and distributors. It connects suppliers directly with pharmacies using Pharmienta Pharmacy. Suppliers receive, manage, prepare, and fulfil pharmacy stock orders digitally through their own supplier dashboard.'
+  },
+  {
+    id: 'faq-supplier-getting-started',
+    category: 'Supplier Platform',
+    question: 'How do I get started as a supplier on Pharmienta?',
+    answer: 'Visit the Pharmienta Supplier platform at pharmienta-suppliers.vercel.app and create your supplier account. You will be guided through onboarding, business verification, and setting up your product catalogue. Once approved, you can start receiving orders from Pharmienta pharmacies.'
+  },
+  {
+    id: 'faq-supplier-orders',
+    category: 'Supplier Platform',
+    question: 'How do I receive and manage pharmacy orders?',
+    answer: 'All pharmacy orders appear in your Supplier Dashboard. You can see new orders, pending orders, orders being prepared, orders ready for dispatch, and delivered orders. Each order shows the pharmacy name, products ordered, quantities, pricing, delivery information, and order status.'
+  },
+  {
+    id: 'faq-supplier-accept-reject',
+    category: 'Supplier Platform',
+    question: 'Can I accept or reject pharmacy orders?',
+    answer: 'Yes. You can review incoming orders and decide to accept the full order, partially accept (if some items are unavailable), or reject the order. The system handles stock reservation so you know what stock is committed to orders versus what is still available.'
+  },
+  {
+    id: 'faq-supplier-stock',
+    category: 'Supplier Platform',
+    question: 'How do I manage my product catalogue and stock?',
+    answer: 'The supplier platform allows you to add products, set supplier-specific prices, manage quantities, SKUs, minimum order quantities, lead times, and activate or deactivate products. You can also track batch numbers, expiry dates, and warehouse locations for better inventory management.'
+  },
+  {
+    id: 'faq-supplier-fulfilment',
+    category: 'Supplier Platform',
+    question: 'What is the order fulfilment workflow?',
+    answer: 'The workflow is: Pharmacy places order → Supplier receives order → Supplier accepts/rejects → Supplier prepares order → Order becomes ready for dispatch → Supplier dispatches → Pharmacy receives delivery → Pharmacy confirms receipt. Once confirmed, the pharmacy\'s inventory updates automatically.'
+  },
+  {
+    id: 'faq-supplier-delivery',
+    category: 'Supplier Platform',
+    question: 'How do I manage deliveries and dispatch?',
+    answer: 'You can manage the dispatch stage by adding delivery information including delivery reference, courier name, driver name, driver phone, vehicle registration, dispatch date, delivery status, and delivery notes. This gives both sides full visibility into order movement.'
+  },
+  {
+    id: 'faq-supplier-notifications',
+    category: 'Supplier Platform',
+    question: 'Will I be notified when new orders come in?',
+    answer: 'Yes! Suppliers receive real-time notifications for important events such as new pharmacy orders, cancelled orders, low stock alerts, and other order-related events. This ensures you don\'t have to constantly check whether something has happened.'
+  },
+  {
+    id: 'faq-supplier-relationships',
+    category: 'Supplier Platform',
+    question: 'Can I build ongoing relationships with pharmacies?',
+    answer: 'Absolutely. The platform is designed to support ongoing B2B relationships between suppliers and pharmacies. You can maintain information about your pharmacy trade partners, including business and payment information, creating a proper pharmaceutical supply network.'
+  },
+  {
+    id: 'faq-supplier-audit',
+    category: 'Supplier Platform',
+    question: 'Is there an audit trail for supplier actions?',
+    answer: 'Yes. Important supplier actions are recorded including accepting orders, rejecting orders, dispatching orders, adjusting stock, and other significant activities. This creates a complete history for accountability and compliance purposes.'
+  },
+  {
+    id: 'faq-supplier-cost',
+    category: 'Supplier Platform',
+    question: 'Is there a cost to use Pharmienta Supplier?',
+    answer: 'Pharmienta Supplier is part of the Pharmienta ecosystem. Contact our sales team for current pricing and packages. We offer flexible plans designed for suppliers of all sizes, from small distributors to large pharmaceutical wholesalers.'
+  },
+  {
+    id: 'faq-supplier-data',
+    category: 'Supplier Platform',
+    question: 'Is my supplier data secure and private?',
+    answer: 'Yes. Your supplier data including pricing, margins, and internal stock levels are completely confidential. Pharmacies only see the products, prices you set, and delivery information — never your cost prices or margins. Pharmienta complies with the Kenya Data Protection Act 2019.'
   }
 ];
 

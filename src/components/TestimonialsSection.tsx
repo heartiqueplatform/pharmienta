@@ -6,9 +6,10 @@ import {
   Building2,
   MapPin,
   TrendingUp,
-  Users
+  Users,
+  Store
 } from 'lucide-react';
-import { TESTIMONIALS, STATS, TRUSTED_PARTNERS } from '../data/landingData';
+import { PHARMACY_TESTIMONIALS, SUPPLIER_TESTIMONIALS, STATS, TRUSTED_PARTNERS } from '../data/landingData';
 
 interface TestimonialsSectionProps {
   isDarkMode?: boolean;
@@ -21,17 +22,15 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ isDark
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-
-
           <h2 className={`text-3xl sm:text-4xl lg:text-5xl font-extrabold font-heading tracking-tight mb-5 ${isDarkMode ? 'text-white' : 'text-slate-900'
             }`}>
-            Trusted by Pharmacists Across{' '}
+            Trusted by Pharmacies & Suppliers Across{' '}
             <span className="text-[#2ea043]">Kenya</span>
           </h2>
 
           <p className={`text-base sm:text-lg ${isDarkMode ? 'text-slate-300' : 'text-slate-600'
             }`}>
-            Hear from pharmacy owners, superintendents, and dispensing chemists transforming their daily counter workflows.
+            Hear from pharmacy owners, superintendents, and pharmaceutical suppliers transforming their workflows with the Pharmienta ecosystem.
           </p>
         </div>
 
@@ -57,68 +56,54 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ isDark
           ))}
         </div>
 
-        {/* Testimonials Cards Grid - NO BORDERS */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-16">
-          {TESTIMONIALS.map((testimonial) => (
-            <div
-              key={testimonial.id}
-              className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-md hover:shadow-xl transition-all duration-300 ${isDarkMode ? 'bg-[#161b22]' : 'bg-white'
-                }`}
-            >
-              <div>
-                {/* Rating & Quote Icon */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center gap-1">
-                    {[...Array(testimonial.rating)].map((_, r) => (
-                      <Star key={r} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <Quote className={`w-6 h-6 ${isDarkMode ? 'text-slate-700' : 'text-slate-300'}`} />
-                </div>
-
-                {/* Quote Text */}
-                <p className={`text-sm sm:text-base leading-relaxed italic mb-6 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'
-                  }`}>
-                  "{testimonial.quote}"
-                </p>
-              </div>
-
-              <div>
-                {/* Impact Metric Pill */}
-                <div className="mb-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 text-xs font-bold shadow-xs">
-                  <TrendingUp className="w-3.5 h-3.5 text-[#2ea043]" />
-                  <span>{testimonial.impactMetric}</span>
-                </div>
-
-                {/* Author Info */}
-                <div className={`flex items-center gap-3 pt-4 ${isDarkMode ? 'border-t border-slate-800' : 'border-t border-slate-100'
-                  }`}>
-                  <img
-                    src={testimonial.avatar}
-                    alt={testimonial.name}
-                    className="w-12 h-12 rounded-full object-cover shadow-sm shrink-0"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <h4 className={`text-sm font-bold font-heading ${isDarkMode ? 'text-white' : 'text-slate-900'
-                        }`}>
-                        {testimonial.name}
-                      </h4>
-                      {testimonial.verified && (
-                        <CheckCircle2 className="w-4 h-4 text-[#2ea043] shrink-0" title="Verified Kenyan Chemist" />
-                      )}
-                    </div>
-                    <p className="text-xs text-slate-400">{testimonial.role}</p>
-                    <p className="text-xs text-[#003366] dark:text-blue-400 font-medium flex items-center gap-1 mt-0.5">
-                      <MapPin className="w-3 h-3 text-slate-400" />
-                      <span>{testimonial.pharmacyName} ({testimonial.location})</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
+        {/* Pharmacy Testimonials Section */}
+        <div className="mb-12">
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium ${isDarkMode ? 'bg-[#1c2333] text-blue-400' : 'bg-blue-50 text-blue-700'
+              }`}>
+              <Store className="w-4 h-4" />
+              Pharmacy Testimonials
+              <span className={`text-xs ${isDarkMode ? 'text-slate-500' : 'text-slate-400'}`}>
+                ({PHARMACY_TESTIMONIALS.length})
+              </span>
             </div>
-          ))}
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {PHARMACY_TESTIMONIALS.map((testimonial) => (
+              <TestimonialCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                isDarkMode={isDarkMode}
+                type="pharmacy"
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* Supplier Testimonials Section */}
+        <div className="mb-16">
+          <div className="flex items-center justify-center gap-3 mb-8">
+            <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium ${isDarkMode ? 'bg-[#1c2333] text-emerald-400' : 'bg-emerald-50 text-emerald-700'
+              }`}>
+              <Building2 className="w-4 h-4" />
+              Supplier Testimonials
+              <span className={`text-xs ${isDarkMode ? 'text-slate-500' : 'text-slate-400'}`}>
+                ({SUPPLIER_TESTIMONIALS.length})
+              </span>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+            {SUPPLIER_TESTIMONIALS.map((testimonial) => (
+              <TestimonialCard
+                key={testimonial.id}
+                testimonial={testimonial}
+                isDarkMode={isDarkMode}
+                type="supplier"
+              />
+            ))}
+          </div>
         </div>
 
         {/* Partner Logos Strip - NO BORDERS */}
@@ -139,9 +124,93 @@ export const TestimonialsSection: React.FC<TestimonialsSectionProps> = ({ isDark
               </div>
             ))}
           </div>
+
+          {/* Supplier Network Note */}
+          <div className={`mt-6 p-4 rounded-xl text-center text-sm ${isDarkMode ? 'bg-[#161b22] border border-slate-800' : 'bg-white border border-slate-200'
+            }`}>
+            <p className={`text-xs ${isDarkMode ? 'text-slate-400' : 'text-slate-600'
+              }`}>
+              <span className="font-bold text-[#003366] dark:text-blue-400">Pharmienta Supplier Network:</span>
+              {' '}Join the growing network of pharmaceutical suppliers connecting with pharmacies across Kenya.
+            </p>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
+// Testimonial Card Component
+interface TestimonialCardProps {
+  testimonial: any;
+  isDarkMode: boolean;
+  type: 'pharmacy' | 'supplier';
+}
+
+const TestimonialCard: React.FC<TestimonialCardProps> = ({ testimonial, isDarkMode, type }) => {
+  const typeColors = type === 'pharmacy'
+    ? { bg: 'bg-blue-100 dark:bg-blue-950/60', text: 'text-blue-800 dark:text-blue-300' }
+    : { bg: 'bg-emerald-100 dark:bg-emerald-950/60', text: 'text-emerald-800 dark:text-emerald-300' };
+
+  return (
+    <div
+      className={`rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-md hover:shadow-xl transition-all duration-300 ${isDarkMode ? 'bg-[#161b22]' : 'bg-white'
+        }`}
+    >
+      <div>
+        {/* Rating & Quote Icon */}
+        <div className="flex items-center justify-between mb-4">
+          <div className="flex items-center gap-1">
+            {[...Array(testimonial.rating)].map((_, r) => (
+              <Star key={r} className="w-4 h-4 fill-amber-400 text-amber-400" />
+            ))}
+          </div>
+          <div className={`px-2.5 py-1 rounded-lg text-xs font-bold ${typeColors.bg} ${typeColors.text}`}>
+            {type === 'pharmacy' ? 'Pharmacy' : 'Supplier'}
+          </div>
+        </div>
+
+        {/* Quote Text */}
+        <p className={`text-sm sm:text-base leading-relaxed italic mb-6 ${isDarkMode ? 'text-slate-300' : 'text-slate-600'
+          }`}>
+          "{testimonial.quote}"
+        </p>
+      </div>
+
+      <div>
+        {/* Impact Metric Pill */}
+        <div className="mb-4 inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-emerald-100 text-emerald-800 dark:bg-emerald-950/60 dark:text-emerald-300 text-xs font-bold shadow-xs">
+          <TrendingUp className="w-3.5 h-3.5 text-[#2ea043]" />
+          <span>{testimonial.impactMetric}</span>
+        </div>
+
+        {/* Author Info */}
+        <div className={`flex items-center gap-3 pt-4 ${isDarkMode ? 'border-t border-slate-800' : 'border-t border-slate-100'
+          }`}>
+          <img
+            src={testimonial.avatar}
+            alt={testimonial.name}
+            className="w-12 h-12 rounded-full object-cover shadow-sm shrink-0"
+            referrerPolicy="no-referrer"
+          />
+          <div>
+            <div className="flex items-center gap-2">
+              <h4 className={`text-sm font-bold font-heading ${isDarkMode ? 'text-white' : 'text-slate-900'
+                }`}>
+                {testimonial.name}
+              </h4>
+              {testimonial.verified && (
+                <CheckCircle2 className="w-4 h-4 text-[#2ea043] shrink-0" title="Verified" />
+              )}
+            </div>
+            <p className="text-xs text-slate-400">{testimonial.role}</p>
+            <p className="text-xs text-[#003366] dark:text-blue-400 font-medium flex items-center gap-1 mt-0.5">
+              <MapPin className="w-3 h-3 text-slate-400" />
+              <span>{testimonial.pharmacyName} ({testimonial.location})</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
